@@ -21,7 +21,7 @@ public class BookingRoom {
     private boolean lunch;
     private boolean dessert;
 
-    public BookingRoom(Builder b) {
+    private BookingRoom(Builder b) {
         this.room = b.room;
         this.fullName = b.fullName;
         this.arrivalDate = b.arrivalDate;
