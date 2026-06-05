@@ -6,8 +6,8 @@
 package FactoryMethod;
 
 /**
- *
- * @author AL
+ * @author Raghad Saqallah
+ * ID:220232444
  */
 public class StanderdRoomFactory implements RoomFactory{
 

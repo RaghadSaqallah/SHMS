@@ -4,9 +4,15 @@
  */
 package TemplateMethod;
 import Builder.BookingRoom;
+import Observer.EventManager;
+import Observer.Events.CheckInEvent;
 import Singleton.Config;
 
 public class CheckInWorkflow extends HotelWorkflow {
+
+    public CheckInWorkflow(EventManager eventManager) {
+        super(eventManager);
+    }
 
     @Override
     protected String getWorkflowName() {
@@ -26,6 +32,8 @@ public class CheckInWorkflow extends HotelWorkflow {
         System.out.println("  Welcome, " + booking.getFullName() + "!");
         System.out.println("  Room: " + booking.getRoom().getDetails());
         System.out.println("  Key card issued.");
+        // observer
+        eventManager.publish(new CheckInEvent(), booking.getFullName());  // observer اشعار  بانه تمت عملة التشيك ان
     }
 
     @Override

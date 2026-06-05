@@ -3,17 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package FactoryMethod;
+package Observer;
+
+import Observer.Events.Event;
 
 /**
- *
- *  * @author Raghad Saqallah
+  * @author Raghad Saqallah 
  * ID:220232444
  */
-
-// all factory implements from this interface
-public interface RoomFactory {
-    
-    public Room createRoom();
+public interface EventListener {
+    // event type ,  guest name
+    public void update(Event event , String name);
 
 }

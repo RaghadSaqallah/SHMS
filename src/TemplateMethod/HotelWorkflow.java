@@ -4,9 +4,16 @@
  */
 package TemplateMethod;
 import Builder.BookingRoom;
-import Singleton.Config;
+import Observer.EventManager;
 
 public abstract class HotelWorkflow {
+    
+    protected EventManager eventManager ;// خاص بالاشعارات 
+
+    public HotelWorkflow(EventManager eventManager) {
+        this.eventManager = eventManager;
+    }
+    
 
     public final void executeWorkflow(BookingRoom booking) {
         System.out.println("\n=== Starting: " + getWorkflowName() + " ===");
@@ -15,9 +22,7 @@ public abstract class HotelWorkflow {
         prepareProcess(booking);    
         performMainAction(booking); 
         processServices(booking);  
-        notifyGuest(booking);       
         logToSystem(booking);       
-
         System.out.println("=== " + getWorkflowName() + " Completed ===\n");
     }
 
@@ -36,9 +41,6 @@ public abstract class HotelWorkflow {
         if (booking.isDessert())   System.out.println("  Dessert added.");
     }
 
-    private void notifyGuest(BookingRoom booking) {
-        System.out.println("[Step 5] Notification sent to: " + booking.getFullName());
-    }
 
     protected abstract String getWorkflowName();
     protected abstract void prepareProcess(BookingRoom booking);

@@ -9,8 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
- * @author AL
+ * @author Raghad Saqallah
+ * ID:220232444
  */
 public class SuiteRoom implements Room {
 

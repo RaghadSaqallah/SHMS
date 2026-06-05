@@ -137,8 +137,8 @@ public class BookingRoom {
 
         public BookingRoom build() { 
             //validetor for null and empty
-            if (room == null || fullName == null ||fullName .equals("") || arrivalDate == null || arrivalDate.equals("")
-                   ||  departureDate.equals("")|| departureDate == null) {
+            if (fullName .equals("") || arrivalDate.equals("") ||  departureDate.equals("")|| room == null || fullName == null || arrivalDate == null 
+                   || departureDate == null) {
                 throw new IllegalStateException("you must enter room type , a full name ,arrival Date and departure Date ");
             }
 

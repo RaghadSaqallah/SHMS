@@ -3,17 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package FactoryMethod;
+package Observer.Events;
 
 /**
- * @author Raghad Saqallah
+ * @author Raghad Saqallah 
  * ID:220232444
  */
-public class SuiteRoomFactory implements RoomFactory{
+// event type
+
+public class CheckInEvent implements Event{
 
     @Override
-    public Room createRoom() {
-        return new SuiteRoom();
+    public String message(String name) {
+        return " Guest " + name  + ": your room is ready";
     }
 
 }

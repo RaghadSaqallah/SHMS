@@ -5,18 +5,21 @@
 package TemplateMethod;
 
 import Builder.BookingRoom;
+import Observer.EventManager;
+import Observer.Events.CheckOutEvent;
 import Singleton.Config;
 import Strategy.BillingContext;
-
 
 public class CheckOutWorkflow extends HotelWorkflow {
 
     private BillingContext billingContext;
     private int nights;
-
-    public CheckOutWorkflow(BillingContext billingContext, int nights) {
+    
+    public CheckOutWorkflow(BillingContext billingContext, int nights, EventManager eventManager) {
+        super(eventManager);
         this.billingContext = billingContext;
         this.nights = nights;
+
     }
 
     @Override
@@ -43,6 +46,9 @@ public class CheckOutWorkflow extends HotelWorkflow {
         System.out.println("  Final Bill: $" + String.format("%.2f", bill));
         System.out.println("  Payment confirmed.");
         System.out.println("  Thank you for staying at " + Config.getInstance().getHotelName() + "!");
+       
+        //observer ارسال اشعارت ب event التشيك اوت
+        eventManager.publish(new CheckOutEvent(), booking.getFullName());  // اشعار التشيك اوت 
     }
 
     @Override
