@@ -12,7 +12,7 @@ import Strategy.BillingContext;
 /**
  * CheckOutWorkflow - تنفيذ خطوات تسجيل الخروج
  * 
- * @author [اسمك]
+ * @author 
  */
 public class CheckOutWorkflow extends HotelWorkflow {
 

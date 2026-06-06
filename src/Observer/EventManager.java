@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * EventManager - الناشر (Publisher)
+ 
  * المسؤول عن إدارة المشتركين وتوزيع الأحداث عليهم 
  */
 public class EventManager {
-    // قائمة لتخزين كافة المستمعين (Subscribers)
+    //  لتخزين كافة المستمعين 
     private List<NotificationListener> listeners = new ArrayList<>();
 
     // إضافة مشترك جديد
@@ -28,13 +28,10 @@ public class EventManager {
         listeners.remove(listener);
     }
 
-    /**
-     * تنفيذ عملية النشر (Publish)
-     * التعديل هنا: تم تغيير نوع البارامتر الأول من Object إلى Event
-     */
+     // تنفيذ عملية النشر (Publish)
     public void publish(Event event, String guestName) {
         for (NotificationListener listener : listeners) {
-            // استدعاء ميثود التحديث لكل مشترك بمرونة تامة دون الحاجة لمعرفة نوع الحدث
+            // استدعاء ميثود التحديث لكل مشترك  دون الحاجة لمعرفة نوع الحدث
             listener.update(event, guestName);
         }
     }

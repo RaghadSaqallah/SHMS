@@ -15,7 +15,7 @@ public class BillingContext {
 
     public void setStrategy(BillingStrategy strategy) {
         this.strategy = strategy;
-        System.out.println("  >> Billing strategy changed to: " + strategy.getStrategyName());
+        System.out.println("Billing strategy changed to: " + strategy.getStrategyName());
     }
 
     public double calculateBill(BookingRoom booking, int nights) {
@@ -28,10 +28,7 @@ public class BillingContext {
 
         double total = strategy.calculateTotal(booking.getRoom(), nights);
 
-        System.out.println("-----------------------------");
         System.out.println("TOTAL    : $" + String.format("%.2f", total));
-        System.out.println("=============================\n");
-
         return total;
     }
 }

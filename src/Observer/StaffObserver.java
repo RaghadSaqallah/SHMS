@@ -9,6 +9,6 @@ import Observer.Events.Event;
 public class StaffObserver implements NotificationListener {
     @Override
     public void update(Event event, String guestName) {
-        // بدون أي if، يطبع التحديث القادم من الحدث مباشرة للموظفين
+        // يطبع التحديث القادم من الحدث مباشرة للموظفين
         System.out.println("[Staff Alert] Attention Team! For Guest [" + guestName + "]: " + event.getMessage());
     }}
